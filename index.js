@@ -18,7 +18,11 @@ Do the following:
    HINT: no function required
 */
 
+const votingAge = 18
 
+if (votingAge > 18){
+  console.log(true)
+}
 
 /*
 Task 1b - Values
@@ -31,7 +35,11 @@ Do the following:
    HINT: no function required
 */
 
-
+let a = 1
+let b = 2
+if (b > a){
+ let a = b
+}
 
 
 
@@ -46,6 +54,9 @@ Do the following:
    HINT: look up the Number method
 */
 
+let str = '1999'
+let num = parseInt(str, 10);
+console.log(num)
 
 
 
@@ -58,8 +69,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+   return(a * b)
   }
 
 
@@ -74,8 +85,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(a){
+    return(a * 7)
 }
 
 
@@ -107,11 +118,24 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+
+    if(age >= 1 && weight <= 5){
+      return weight * .05;
+    }else if(age >= 1 && weight >=6 && weight <=10){
+      return weight * .04;
+    }else if(age >= 1 && weight >= 11 && weight <= 15){
+      return weight * .03;
+    }else if (age >= 1 && weight > 15){
+      return weight * .02;
+    }else if(age < 1  && weight  <=.583){
+      return weight * .04;
+    }else if(age > .583 && age<= .333){
+      return weight * .05;
+    }else if(age < .333){
+      return weight * .10;
+    }
   }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -135,8 +159,37 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
-}
+  // let compute = Math.random();
+
+  // if (compute >= .99) {
+  //   computer = 'rock';
+  // } else if(compute < .25) {
+  //   computer = 'scissors';
+  // } else if (compute >= .30){
+  //   computer = 'paper';
+  // } 
+
+  if (user === 'paper' && computer === 'rock') {
+     return 'you win!';
+    }else if (user === 'paper' && computer === 'scissors') {
+        return 'you lose!';
+      }
+  if (user === 'rock' && computer === 'scissors') {
+        return 'you win!';
+      }else if (user === 'rock' && computer === 'paper') {
+        return 'you lose!';
+      }
+
+      if (user === 'scissors' && computer === 'paper') {
+        return 'you win!';
+      } else if (user === 'scissors' && computer === 'rock') {
+        return 'you lose!';
+      }
+
+      if (user === computer){
+        return "it's a tie";
+      } 
+    } 
   
   
 
