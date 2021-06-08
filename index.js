@@ -159,16 +159,6 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-  // let compute = Math.random();
-
-  // if (compute >= .99) {
-  //   computer = 'rock';
-  // } else if(compute < .25) {
-  //   computer = 'scissors';
-  // } else if (compute >= .30){
-  //   computer = 'paper';
-  // } 
-
   if (user === 'paper' && computer === 'rock') {
      return 'you win!';
     }else if (user === 'paper' && computer === 'scissors') {
@@ -204,8 +194,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    return kilometers * 0.621371
   }
 
 
@@ -218,8 +208,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(centimeters){
+  return centimeters / 30.48
   }
  
 
@@ -234,10 +224,22 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(startingNumber) {
+  let i;
+  for (i = startingNumber; i >= 0; i--) {
+    let annoyingSong =
+      "{number} bottles of soda on the wall,".replace("{number}", i) +
+      " {number} bottles of soda, take one down pass it around ".replace(
+        "{number}",
+        i
+      ) +
+      "{number left over} bottles of soda on the wall".replace(
+        "{number left over}",
+        i - 1
+      );
+      return annoyingSong;
+    }
   }
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -254,10 +256,20 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(int) {
+  if (int >= 90){
+   return "you got an A";
+  }else if (int >= 80 && int < 90) {
+    return "you got a B";
+  }else if (int >= 70 && int < 80){
+   return "you got a C";
+  }else if (int >= 60 && int < 70) {
+    return "you got a D";
+  }else if (int <= 59){
+    return "you got an F";
   }
-  
+}
+
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -271,12 +283,6 @@ Using the vowelCounter function below do the following:
   HINT - you may need to study tomorrow's content on arrays 
   HINT - try looking up the .includes() method
 */
-
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
-
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
